@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="livreurs">
+      <h2 data-cy="livreursDetailsHeading"><span jhiTranslate="appCoopcycleApp.livreurs.detail.title">Livreurs</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ livreurs.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.livreurs.nom">Nom</span></dt>
+        <dd>
+          <span>{{ livreurs.nom }}</span>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.livreurs.prenom">Prenom</span></dt>
+        <dd>
+          <span>{{ livreurs.prenom }}</span>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.livreurs.city">City</span></dt>
+        <dd>
+          <span>{{ livreurs.city }}</span>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.livreurs.restaurateur">Restaurateur</span></dt>
+        <dd>
+          <div *ngIf="livreurs.restaurateur">
+            <a [routerLink]="['/restaurateurs', livreurs.restaurateur?.id, 'view']">{{ livreurs.restaurateur?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.livreurs.cooperative">Cooperative</span></dt>
+        <dd>
+          <div *ngIf="livreurs.cooperative">
+            <a [routerLink]="['/cooperatives', livreurs.cooperative?.id, 'view']">{{ livreurs.cooperative?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/livreurs', livreurs.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

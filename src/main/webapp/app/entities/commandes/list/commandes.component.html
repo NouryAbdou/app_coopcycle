@@ -1,0 +1,93 @@
+<div>
+  <h2 id="page-heading" data-cy="CommandesHeading">
+    <span jhiTranslate="appCoopcycleApp.commandes.home.title">Commandes</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="appCoopcycleApp.commandes.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-commandes"
+        [routerLink]="['/commandes/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="appCoopcycleApp.commandes.home.createLabel"> Create a new Commandes </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="commandes?.length === 0">
+    <span jhiTranslate="appCoopcycleApp.commandes.home.notFound">No commandes found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="commandes && commandes.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.commandes.id">Id</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.commandes.estPret">Est Pret</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.commandes.estPaye">Est Paye</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.commandes.client">Client</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.commandes.restaurant">Restaurant</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let commandes of commandes; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/commandes', commandes.id, 'view']">{{ commandes.id }}</a>
+          </td>
+          <td>{{ commandes.estPret }}</td>
+          <td>{{ commandes.estPaye }}</td>
+          <td>
+            <div *ngIf="commandes.client">
+              <a [routerLink]="['/clients', commandes.client?.id, 'view']">{{ commandes.client?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <span *ngFor="let restaurant of commandes.restaurants; let last = last">
+              <a class="form-control-static" [routerLink]="['/restaurants', restaurant.id, 'view']">{{ restaurant.id }}</a
+              >{{ last ? '' : ', ' }}
+            </span>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/commandes', commandes.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/commandes', commandes.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(commandes)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

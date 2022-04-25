@@ -1,0 +1,88 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-restaurants-heading"
+        data-cy="RestaurantsCreateUpdateHeading"
+        jhiTranslate="appCoopcycleApp.restaurants.home.createOrEditLabel"
+      >
+        Create or edit a Restaurants
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="appCoopcycleApp.restaurants.nom" for="field_nom">Nom</label>
+          <input type="text" class="form-control" name="nom" id="field_nom" data-cy="nom" formControlName="nom" />
+          <div *ngIf="editForm.get('nom')!.invalid && (editForm.get('nom')!.dirty || editForm.get('nom')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('nom')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('nom')?.errors?.minlength"
+              jhiTranslate="entity.validation.minlength"
+              [translateValues]="{ min: 5 }"
+            >
+              This field is required to be at least 5 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="appCoopcycleApp.restaurants.carte" for="field_carte">Carte</label>
+          <input type="text" class="form-control" name="carte" id="field_carte" data-cy="carte" formControlName="carte" />
+          <div *ngIf="editForm.get('carte')!.invalid && (editForm.get('carte')!.dirty || editForm.get('carte')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('carte')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="appCoopcycleApp.restaurants.menu" for="field_menu">Menu</label>
+          <input type="text" class="form-control" name="menu" id="field_menu" data-cy="menu" formControlName="menu" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="appCoopcycleApp.restaurants.restaurateur" for="field_restaurateur">Restaurateur</label>
+          <select class="form-control" id="field_restaurateur" data-cy="restaurateur" name="restaurateur" formControlName="restaurateur">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                restaurateursOption.id === editForm.get('restaurateur')!.value?.id
+                  ? editForm.get('restaurateur')!.value
+                  : restaurateursOption
+              "
+              *ngFor="let restaurateursOption of restaurateursSharedCollection; trackBy: trackRestaurateursById"
+            >
+              {{ restaurateursOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

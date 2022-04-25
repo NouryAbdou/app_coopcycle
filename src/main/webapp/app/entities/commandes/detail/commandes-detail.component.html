@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="commandes">
+      <h2 data-cy="commandesDetailsHeading"><span jhiTranslate="appCoopcycleApp.commandes.detail.title">Commandes</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="appCoopcycleApp.commandes.id">Id</span></dt>
+        <dd>
+          <span>{{ commandes.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.commandes.estPret">Est Pret</span></dt>
+        <dd>
+          <span>{{ commandes.estPret }}</span>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.commandes.estPaye">Est Paye</span></dt>
+        <dd>
+          <span>{{ commandes.estPaye }}</span>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.commandes.client">Client</span></dt>
+        <dd>
+          <div *ngIf="commandes.client">
+            <a [routerLink]="['/clients', commandes.client?.id, 'view']">{{ commandes.client?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.commandes.restaurant">Restaurant</span></dt>
+        <dd>
+          <span *ngFor="let restaurant of commandes.restaurants; let last = last">
+            <a [routerLink]="['/restaurants', restaurant?.id, 'view']">{{ restaurant.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/commandes', commandes.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

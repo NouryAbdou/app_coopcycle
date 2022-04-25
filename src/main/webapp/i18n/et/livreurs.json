@@ -1,0 +1,28 @@
+{
+  "appCoopcycleApp": {
+    "livreurs": {
+      "home": {
+        "title": "Livreurs",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Livreurs",
+        "createOrEditLabel": "Lisa või muuda Livreurs",
+        "notFound": "Ei leitud ühtegi Livreurs"
+      },
+      "created": "Uus Livreurs on loodud identifikaatoriga {{ param }}",
+      "updated": "Livreurs identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Livreurs identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Livreurs {{ id }}?"
+      },
+      "detail": {
+        "title": "Livreurs"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "city": "City",
+      "restaurateur": "Restaurateur",
+      "cooperative": "Cooperative"
+    }
+  }
+}

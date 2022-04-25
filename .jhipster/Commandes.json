@@ -1,0 +1,42 @@
+{
+  "applications": "*",
+  "changelogDate": "20220425055612",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "commandes",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estPret",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "estPaye",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Commandes",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "clients",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "restaurants",
+      "otherEntityRelationshipName": "commande",
+      "ownerSide": true,
+      "relationshipName": "restaurant",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

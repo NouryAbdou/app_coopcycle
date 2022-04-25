@@ -1,0 +1,27 @@
+{
+  "appCoopcycleApp": {
+    "commandes": {
+      "home": {
+        "title": "Commandes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Commandes",
+        "createOrEditLabel": "Krijo ose përpuno një Commandes",
+        "notFound": "No Commandes found"
+      },
+      "created": "Një Commandes i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Commandes u përpunua me identifikues {{ param }}",
+      "deleted": "Një Commandes u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Commandes {{ id }}?"
+      },
+      "detail": {
+        "title": "Commandes"
+      },
+      "id": "Id",
+      "estPret": "Est Pret",
+      "estPaye": "Est Paye",
+      "client": "Client",
+      "restaurant": "Restaurant"
+    }
+  }
+}

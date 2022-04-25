@@ -1,0 +1,28 @@
+{
+  "appCoopcycleApp": {
+    "restaurants": {
+      "home": {
+        "title": "Restaurants",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Restaurants",
+        "createOrEditLabel": "Créer ou éditer un Restaurants",
+        "notFound": "Aucun Restaurants trouvé"
+      },
+      "created": "Un nouveau Restaurants a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Restaurants avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Restaurants avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Restaurants {{ id }} ?"
+      },
+      "detail": {
+        "title": "Restaurants"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "carte": "Carte",
+      "menu": "Menu",
+      "restaurateur": "Restaurateur",
+      "commande": "Commande"
+    }
+  }
+}

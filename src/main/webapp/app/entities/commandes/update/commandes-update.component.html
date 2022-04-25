@@ -1,0 +1,84 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-commandes-heading" data-cy="CommandesCreateUpdateHeading" jhiTranslate="appCoopcycleApp.commandes.home.createOrEditLabel">
+        Create or edit a Commandes
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="appCoopcycleApp.commandes.id" for="field_id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="editForm.get('id')!.value != null"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="appCoopcycleApp.commandes.estPret" for="field_estPret">Est Pret</label>
+          <input type="checkbox" class="form-check" name="estPret" id="field_estPret" data-cy="estPret" formControlName="estPret" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="appCoopcycleApp.commandes.estPaye" for="field_estPaye">Est Paye</label>
+          <input type="checkbox" class="form-check" name="estPaye" id="field_estPaye" data-cy="estPaye" formControlName="estPaye" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="appCoopcycleApp.commandes.client" for="field_client">Client</label>
+          <select class="form-control" id="field_client" data-cy="client" name="client" formControlName="client">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="clientsOption.id === editForm.get('client')!.value?.id ? editForm.get('client')!.value : clientsOption"
+              *ngFor="let clientsOption of clientsSharedCollection; trackBy: trackClientsById"
+            >
+              {{ clientsOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label jhiTranslate="appCoopcycleApp.commandes.restaurant" for="field_restaurants">Restaurant</label>
+          <select
+            class="form-control"
+            id="field_restaurants"
+            data-cy="restaurant"
+            multiple
+            name="restaurants"
+            formControlName="restaurants"
+          >
+            <option
+              [ngValue]="getSelectedRestaurants(restaurantsOption, editForm.get('restaurants')!.value)"
+              *ngFor="let restaurantsOption of restaurantsSharedCollection; trackBy: trackRestaurantsById"
+            >
+              {{ restaurantsOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

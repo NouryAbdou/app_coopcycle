@@ -1,0 +1,94 @@
+<div>
+  <h2 id="page-heading" data-cy="LivreursHeading">
+    <span jhiTranslate="appCoopcycleApp.livreurs.home.title">Livreurs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="appCoopcycleApp.livreurs.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-livreurs"
+        [routerLink]="['/livreurs/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="appCoopcycleApp.livreurs.home.createLabel"> Create a new Livreurs </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="livreurs?.length === 0">
+    <span jhiTranslate="appCoopcycleApp.livreurs.home.notFound">No livreurs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="livreurs && livreurs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.livreurs.nom">Nom</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.livreurs.prenom">Prenom</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.livreurs.city">City</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.livreurs.restaurateur">Restaurateur</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.livreurs.cooperative">Cooperative</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let livreurs of livreurs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/livreurs', livreurs.id, 'view']">{{ livreurs.id }}</a>
+          </td>
+          <td>{{ livreurs.nom }}</td>
+          <td>{{ livreurs.prenom }}</td>
+          <td>{{ livreurs.city }}</td>
+          <td>
+            <div *ngIf="livreurs.restaurateur">
+              <a [routerLink]="['/restaurateurs', livreurs.restaurateur?.id, 'view']">{{ livreurs.restaurateur?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="livreurs.cooperative">
+              <a [routerLink]="['/cooperatives', livreurs.cooperative?.id, 'view']">{{ livreurs.cooperative?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/livreurs', livreurs.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/livreurs', livreurs.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(livreurs)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

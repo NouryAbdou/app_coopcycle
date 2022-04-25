@@ -1,0 +1,28 @@
+{
+  "appCoopcycleApp": {
+    "livreurs": {
+      "home": {
+        "title": "Livreurs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Livreurs",
+        "createOrEditLabel": "Krijo ose përpuno një Livreurs",
+        "notFound": "No Livreurs found"
+      },
+      "created": "Një Livreurs i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Livreurs u përpunua me identifikues {{ param }}",
+      "deleted": "Një Livreurs u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Livreurs {{ id }}?"
+      },
+      "detail": {
+        "title": "Livreurs"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "city": "City",
+      "restaurateur": "Restaurateur",
+      "cooperative": "Cooperative"
+    }
+  }
+}

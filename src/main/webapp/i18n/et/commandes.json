@@ -1,0 +1,27 @@
+{
+  "appCoopcycleApp": {
+    "commandes": {
+      "home": {
+        "title": "Commandes",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Commandes",
+        "createOrEditLabel": "Lisa või muuda Commandes",
+        "notFound": "Ei leitud ühtegi Commandes"
+      },
+      "created": "Uus Commandes on loodud identifikaatoriga {{ param }}",
+      "updated": "Commandes identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Commandes identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Commandes {{ id }}?"
+      },
+      "detail": {
+        "title": "Commandes"
+      },
+      "id": "Id",
+      "estPret": "Est Pret",
+      "estPaye": "Est Paye",
+      "client": "Client",
+      "restaurant": "Restaurant"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "appCoopcycleApp": {
+    "livreurs": {
+      "home": {
+        "title": "Livreurs",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Livreurs",
+        "createOrEditLabel": "Créer ou éditer un Livreurs",
+        "notFound": "Aucun Livreurs trouvé"
+      },
+      "created": "Un nouveau Livreurs a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Livreurs avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Livreurs avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Livreurs {{ id }} ?"
+      },
+      "detail": {
+        "title": "Livreurs"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "city": "City",
+      "restaurateur": "Restaurateur",
+      "cooperative": "Cooperative"
+    }
+  }
+}

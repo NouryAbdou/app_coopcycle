@@ -1,0 +1,29 @@
+{
+  "appCoopcycleApp": {
+    "clients": {
+      "home": {
+        "title": "Clients",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Clients",
+        "createOrEditLabel": "Krijo ose përpuno një Clients",
+        "notFound": "No Clients found"
+      },
+      "created": "Një Clients i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Clients u përpunua me identifikues {{ param }}",
+      "deleted": "Një Clients u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Clients {{ id }}?"
+      },
+      "detail": {
+        "title": "Clients"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "restaurateur": "Restaurateur",
+      "commande": "Commande"
+    }
+  }
+}

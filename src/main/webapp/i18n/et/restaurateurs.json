@@ -1,0 +1,30 @@
+{
+  "appCoopcycleApp": {
+    "restaurateurs": {
+      "home": {
+        "title": "Restaurateurs",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Restaurateurs",
+        "createOrEditLabel": "Lisa või muuda Restaurateurs",
+        "notFound": "Ei leitud ühtegi Restaurateurs"
+      },
+      "created": "Uus Restaurateurs on loodud identifikaatoriga {{ param }}",
+      "updated": "Restaurateurs identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Restaurateurs identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Restaurateurs {{ id }}?"
+      },
+      "detail": {
+        "title": "Restaurateurs"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "city": "City",
+      "restaurants": "Restaurants",
+      "cooperative": "Cooperative",
+      "client": "Client",
+      "livreur": "Livreur"
+    }
+  }
+}

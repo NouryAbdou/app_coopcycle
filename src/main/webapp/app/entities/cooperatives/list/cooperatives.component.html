@@ -1,0 +1,84 @@
+<div>
+  <h2 id="page-heading" data-cy="CooperativesHeading">
+    <span jhiTranslate="appCoopcycleApp.cooperatives.home.title">Cooperatives</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="appCoopcycleApp.cooperatives.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-cooperatives"
+        [routerLink]="['/cooperatives/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="appCoopcycleApp.cooperatives.home.createLabel"> Create a new Cooperatives </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="cooperatives?.length === 0">
+    <span jhiTranslate="appCoopcycleApp.cooperatives.home.notFound">No cooperatives found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="cooperatives && cooperatives.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.cooperatives.nom">Nom</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.cooperatives.zone">Zone</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cooperatives of cooperatives; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/cooperatives', cooperatives.id, 'view']">{{ cooperatives.id }}</a>
+          </td>
+          <td>{{ cooperatives.nom }}</td>
+          <td>
+            <div *ngIf="cooperatives.zone">
+              <a [routerLink]="['/zones', cooperatives.zone?.id, 'view']">{{ cooperatives.zone?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/cooperatives', cooperatives.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/cooperatives', cooperatives.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(cooperatives)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

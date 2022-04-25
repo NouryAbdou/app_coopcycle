@@ -1,0 +1,29 @@
+{
+  "appCoopcycleApp": {
+    "clients": {
+      "home": {
+        "title": "Clients",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Clients",
+        "createOrEditLabel": "Créer ou éditer un Clients",
+        "notFound": "Aucun Clients trouvé"
+      },
+      "created": "Un nouveau Clients a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Clients avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Clients avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Clients {{ id }} ?"
+      },
+      "detail": {
+        "title": "Clients"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "restaurateur": "Restaurateur",
+      "commande": "Commande"
+    }
+  }
+}

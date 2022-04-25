@@ -1,0 +1,88 @@
+<div>
+  <h2 id="page-heading" data-cy="RestaurantsHeading">
+    <span jhiTranslate="appCoopcycleApp.restaurants.home.title">Restaurants</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="appCoopcycleApp.restaurants.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-restaurants"
+        [routerLink]="['/restaurants/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="appCoopcycleApp.restaurants.home.createLabel"> Create a new Restaurants </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="restaurants?.length === 0">
+    <span jhiTranslate="appCoopcycleApp.restaurants.home.notFound">No restaurants found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="restaurants && restaurants.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.restaurants.nom">Nom</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.restaurants.carte">Carte</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.restaurants.menu">Menu</span></th>
+          <th scope="col"><span jhiTranslate="appCoopcycleApp.restaurants.restaurateur">Restaurateur</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let restaurants of restaurants; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/restaurants', restaurants.id, 'view']">{{ restaurants.id }}</a>
+          </td>
+          <td>{{ restaurants.nom }}</td>
+          <td>{{ restaurants.carte }}</td>
+          <td>{{ restaurants.menu }}</td>
+          <td>
+            <div *ngIf="restaurants.restaurateur">
+              <a [routerLink]="['/restaurateurs', restaurants.restaurateur?.id, 'view']">{{ restaurants.restaurateur?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/restaurants', restaurants.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/restaurants', restaurants.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(restaurants)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "appCoopcycleApp": {
+    "clients": {
+      "home": {
+        "title": "Clients",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Clients",
+        "createOrEditLabel": "Lisa või muuda Clients",
+        "notFound": "Ei leitud ühtegi Clients"
+      },
+      "created": "Uus Clients on loodud identifikaatoriga {{ param }}",
+      "updated": "Clients identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Clients identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Clients {{ id }}?"
+      },
+      "detail": {
+        "title": "Clients"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "restaurateur": "Restaurateur",
+      "commande": "Commande"
+    }
+  }
+}

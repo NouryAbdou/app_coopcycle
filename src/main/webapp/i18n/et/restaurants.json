@@ -1,0 +1,28 @@
+{
+  "appCoopcycleApp": {
+    "restaurants": {
+      "home": {
+        "title": "Restaurants",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Restaurants",
+        "createOrEditLabel": "Lisa või muuda Restaurants",
+        "notFound": "Ei leitud ühtegi Restaurants"
+      },
+      "created": "Uus Restaurants on loodud identifikaatoriga {{ param }}",
+      "updated": "Restaurants identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Restaurants identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Restaurants {{ id }}?"
+      },
+      "detail": {
+        "title": "Restaurants"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "carte": "Carte",
+      "menu": "Menu",
+      "restaurateur": "Restaurateur",
+      "commande": "Commande"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "appCoopcycleApp": {
+    "restaurants": {
+      "home": {
+        "title": "Restaurants",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Restaurants",
+        "createOrEditLabel": "Krijo ose përpuno një Restaurants",
+        "notFound": "No Restaurants found"
+      },
+      "created": "Një Restaurants i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Restaurants u përpunua me identifikues {{ param }}",
+      "deleted": "Një Restaurants u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Restaurants {{ id }}?"
+      },
+      "detail": {
+        "title": "Restaurants"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "carte": "Carte",
+      "menu": "Menu",
+      "restaurateur": "Restaurateur",
+      "commande": "Commande"
+    }
+  }
+}

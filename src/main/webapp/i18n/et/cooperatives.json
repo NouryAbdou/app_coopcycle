@@ -1,0 +1,25 @@
+{
+  "appCoopcycleApp": {
+    "cooperatives": {
+      "home": {
+        "title": "Cooperatives",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Cooperatives",
+        "createOrEditLabel": "Lisa või muuda Cooperatives",
+        "notFound": "Ei leitud ühtegi Cooperatives"
+      },
+      "created": "Uus Cooperatives on loodud identifikaatoriga {{ param }}",
+      "updated": "Cooperatives identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Cooperatives identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Cooperatives {{ id }}?"
+      },
+      "detail": {
+        "title": "Cooperatives"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "zone": "Zone"
+    }
+  }
+}

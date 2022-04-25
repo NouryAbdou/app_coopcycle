@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20220425055608",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "livreurs",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength"],
+      "fieldValidateRulesMinlength": "5"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength"],
+      "fieldValidateRulesMinlength": "10"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength"],
+      "fieldValidateRulesMinlength": "3"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Livreurs",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "restaurateurs",
+      "otherEntityRelationshipName": "livreur",
+      "ownerSide": true,
+      "relationshipName": "restaurateur",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "cooperatives",
+      "otherEntityRelationshipName": "livreurs",
+      "relationshipName": "cooperative",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="zones">
+      <h2 data-cy="zonesDetailsHeading"><span jhiTranslate="appCoopcycleApp.zones.detail.title">Zones</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ zones.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.zones.ville">Ville</span></dt>
+        <dd>
+          <span>{{ zones.ville }}</span>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.zones.metropole">Metropole</span></dt>
+        <dd>
+          <span>{{ zones.metropole }}</span>
+        </dd>
+        <dt><span jhiTranslate="appCoopcycleApp.zones.communaute">Communaute</span></dt>
+        <dd>
+          <span>{{ zones.communaute }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/zones', zones.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

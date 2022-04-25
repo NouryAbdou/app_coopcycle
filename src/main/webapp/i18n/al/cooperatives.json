@@ -1,0 +1,25 @@
+{
+  "appCoopcycleApp": {
+    "cooperatives": {
+      "home": {
+        "title": "Cooperatives",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Cooperatives",
+        "createOrEditLabel": "Krijo ose përpuno një Cooperatives",
+        "notFound": "No Cooperatives found"
+      },
+      "created": "Një Cooperatives i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Cooperatives u përpunua me identifikues {{ param }}",
+      "deleted": "Një Cooperatives u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Cooperatives {{ id }}?"
+      },
+      "detail": {
+        "title": "Cooperatives"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "zone": "Zone"
+    }
+  }
+}

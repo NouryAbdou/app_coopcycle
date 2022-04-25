@@ -1,0 +1,27 @@
+{
+  "appCoopcycleApp": {
+    "zones": {
+      "home": {
+        "title": "Zones",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Zones",
+        "createOrEditLabel": "Krijo ose përpuno një Zones",
+        "notFound": "No Zones found"
+      },
+      "created": "Një Zones i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Zones u përpunua me identifikues {{ param }}",
+      "deleted": "Një Zones u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Zones {{ id }}?"
+      },
+      "detail": {
+        "title": "Zones"
+      },
+      "id": "ID",
+      "ville": "Ville",
+      "metropole": "Metropole",
+      "communaute": "Communaute",
+      "cooperatives": "Cooperatives"
+    }
+  }
+}

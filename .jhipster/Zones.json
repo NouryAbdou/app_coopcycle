@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20220425055606",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "zones",
+  "fields": [
+    {
+      "fieldName": "ville",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "metropole",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "communaute",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Zones",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "cooperatives",
+      "otherEntityRelationshipName": "zone",
+      "relationshipName": "cooperatives",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

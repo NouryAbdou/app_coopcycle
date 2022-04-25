@@ -1,0 +1,27 @@
+{
+  "appCoopcycleApp": {
+    "commandes": {
+      "home": {
+        "title": "Commandes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Commandes",
+        "createOrEditLabel": "Créer ou éditer un Commandes",
+        "notFound": "Aucun Commandes trouvé"
+      },
+      "created": "Un nouveau Commandes a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Commandes avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Commandes avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Commandes {{ id }} ?"
+      },
+      "detail": {
+        "title": "Commandes"
+      },
+      "id": "Id",
+      "estPret": "Est Pret",
+      "estPaye": "Est Paye",
+      "client": "Client",
+      "restaurant": "Restaurant"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "appCoopcycleApp": {
+    "restaurateurs": {
+      "home": {
+        "title": "Restaurateurs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Restaurateurs",
+        "createOrEditLabel": "Krijo ose përpuno një Restaurateurs",
+        "notFound": "No Restaurateurs found"
+      },
+      "created": "Një Restaurateurs i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Restaurateurs u përpunua me identifikues {{ param }}",
+      "deleted": "Një Restaurateurs u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Restaurateurs {{ id }}?"
+      },
+      "detail": {
+        "title": "Restaurateurs"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "city": "City",
+      "restaurants": "Restaurants",
+      "cooperative": "Cooperative",
+      "client": "Client",
+      "livreur": "Livreur"
+    }
+  }
+}

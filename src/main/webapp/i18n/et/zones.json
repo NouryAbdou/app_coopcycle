@@ -1,0 +1,27 @@
+{
+  "appCoopcycleApp": {
+    "zones": {
+      "home": {
+        "title": "Zones",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Zones",
+        "createOrEditLabel": "Lisa või muuda Zones",
+        "notFound": "Ei leitud ühtegi Zones"
+      },
+      "created": "Uus Zones on loodud identifikaatoriga {{ param }}",
+      "updated": "Zones identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Zones identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Zones {{ id }}?"
+      },
+      "detail": {
+        "title": "Zones"
+      },
+      "id": "ID",
+      "ville": "Ville",
+      "metropole": "Metropole",
+      "communaute": "Communaute",
+      "cooperatives": "Cooperatives"
+    }
+  }
+}
